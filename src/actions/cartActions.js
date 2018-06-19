@@ -1,6 +1,7 @@
-export const addToCart = item => ({
-  type: 'ADD',
-  item,
+export const updateQty = (id, update) => ({
+  type: 'UPDATE',
+  id,
+  update,
 });
 
 export const removeFromCart = item => ({

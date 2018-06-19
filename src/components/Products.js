@@ -1,21 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
-import { addToCart, removeFromCart } from '../actions/cartActions';
+import { updateQty, removeFromCart } from '../actions/cartActions';
 
 class Products extends Component {
-  amount = item => {
-    let inc = 0;
-    this.props.cart.forEach(c => {
-      if (c.id === item.id) {
-        inc += 1;
-      }
-    });
-    return inc;
-  };
   productList = () => {
-    const { cart, addToCart, removeFromCart } = this.props;
-    console.log();
+    const { cart, updateQty, removeFromCart } = this.props;
     return cart.map((item, index) => (
       <div className="productValue" key={index}>
         <div className="itemsValue">
@@ -39,9 +29,34 @@ class Products extends Component {
           </div>
         </div>
         <div className="qtyValue">
-          <button className="minus">-</button>
-          <div className="inputQty">{this.amount(item)}</div>
-          <button className="plus" onClick={() => addToCart(item)}>
+          <button
+            className="minus"
+            onClick={() => {
+              if (item.qty > 1) {
+                item.qty -= 1;
+                const update = {
+                  qty: item.qty,
+                };
+                updateQty(item.id, update);
+              } else {
+                removeFromCart(item);
+                NotificationManager.info(item.name, 'Item Removed', 2000);
+              }
+            }}
+          >
+            -
+          </button>
+          <div className="inputQty">{item.qty}</div>
+          <button
+            className="plus"
+            onClick={() => {
+              item.qty += 1;
+              const update = {
+                qty: item.qty,
+              };
+              updateQty(item.id, update);
+            }}
+          >
             +
           </button>
         </div>
@@ -80,7 +95,7 @@ const mapStateToProps = (state, props) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  addToCart: item => dispatch(addToCart(item)),
+  updateQty: (id, update) => dispatch(updateQty(id, update)),
   removeFromCart: item => dispatch(removeFromCart(item)),
 });
 
