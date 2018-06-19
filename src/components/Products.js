@@ -8,7 +8,7 @@ class Products extends Component {
     let inc = 0;
     this.props.cart.forEach(c => {
       if (c.id === item.id) {
-        inc++;
+        inc += 1;
       }
     });
     return inc;
@@ -26,7 +26,13 @@ class Products extends Component {
               <span id="itemName">{item.name}</span>
             </div>
             <div className="right">
-              <button className="delete" onClick={() => removeFromCart(item)}>
+              <button
+                className="delete"
+                onClick={() => {
+                  removeFromCart(item);
+                  NotificationManager.info(item.name, 'Item Removed');
+                }}
+              >
                 x
               </button>
             </div>
@@ -62,6 +68,7 @@ class Products extends Component {
           </div>
         </div>
         {this.productList()}
+        <NotificationContainer />
       </div>
     );
   }
