@@ -73,5 +73,4 @@ export default {
       qty: 1,
     },
   ],
-  products: [],
 };

@@ -90,7 +90,6 @@ class Products extends Component {
 }
 
 const mapStateToProps = (state, props) => ({
-  products: state.products,
   cart: state.cart,
 });
 
