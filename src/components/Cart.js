@@ -36,7 +36,7 @@ class Cart extends Component {
 }
 
 Cart.propTypes = {
-  cart: PropTypes.object,
+  cart: PropTypes.arrayOf(PropTypes.object),
 };
 
 Cart.defaultProps = {

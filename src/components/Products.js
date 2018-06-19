@@ -95,7 +95,7 @@ class Products extends Component {
 }
 
 Products.propTypes = {
-  cart: PropTypes.object,
+  cart: PropTypes.arrayOf(PropTypes.object),
   updateQty: PropTypes.func,
   removeFromCart: PropTypes.func,
   addToCart: PropTypes.func,
