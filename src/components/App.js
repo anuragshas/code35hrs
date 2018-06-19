@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
+import 'react-notifications/lib/notifications.css';
+import Products from './Products';
+import Cart from './Cart';
 import '../styles/App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Products />
+        <Cart />
       </div>
     );
   }
