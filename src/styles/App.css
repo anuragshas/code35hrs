@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .Header {
   width: 1020px;
@@ -22,7 +23,7 @@ body {
 }
 
 .cart{
-  width:300px;
+  width:258px;
   border: solid 1px #eee;
   margin-left: 20px;
   box-shadow: 1px 1px 1px 1px #eee;
@@ -32,19 +33,17 @@ body {
 }
 .itemsCart {
   display: flex;
-  width:280px;
   justify-content: space-between;
   padding-bottom: 10px;
   padding-right: 10px;
 }
 .orderTotal {
   position: ABSOLUTE;
-    bottom: 0px;
-    width: 300px;
+    bottom: -2px;
+    width: 280px;
     background: #eee;
     display: flex;
     padding: 10px;
-    right: 16p;
     margin-left: -20px;
     justify-content: space-between;
 }
@@ -57,6 +56,8 @@ body {
   height: 40px;
 }
 .itemsValue {
+  display: flex;
+  width: 410px;
   box-shadow: 1px 1px 1px 1px #eee;
 }
 .items {
@@ -70,7 +71,6 @@ body {
 }
 .price {
   display: flex;
-  width: 100px;
 }
 .priceValue {
   display: flex;
@@ -91,7 +91,7 @@ body {
 }
 .itemsdata {
   display: flex;
-  width: 400px;
+  flex: 1;
   padding: 5px;
   justify-content: space-between;
 }
@@ -101,7 +101,6 @@ body {
 }
 .itemsdata .left img{
   width: 25px;
-  height: 50px;
 }
 .itemsdata .right{
   display: flex
@@ -117,8 +116,8 @@ body {
     color: #6d6a6a;
 }
 .qtyValue {
-  width: 150px;
   display: flex;
+  width: 150px;
   align-items: center;
   padding-left: 20px;
 }
@@ -158,7 +157,8 @@ button{
 @media (max-width:1040px){
   .Header{
     padding-left: 20px;
-    width:100%;
+    width:300px;
+    margin: 0;
   }
   .App{
     width:100%;
@@ -167,9 +167,11 @@ button{
   }
   .cart{
     margin-bottom: 40px;
+    margin-right: 20px;
   }
   .products{
     margin-left: 20px;
+    margin-right: 20px;
     flex: 0 0 645px;
   }
 }
