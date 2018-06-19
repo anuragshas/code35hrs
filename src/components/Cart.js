@@ -16,16 +16,18 @@ class Cart extends Component {
         <div className="itemsCart">
           <div>Discount</div>
           <div>:</div>
-          <div>-${baseDiscount}</div>
+          <div>-${baseDiscount.toFixed(2)}</div>
         </div>
         <div className="itemsCart">
           <div>Type Discount</div>
           <div>:</div>
-          <div>-${typeDiscount}</div>
+          <div>-${typeDiscount.toFixed(2)}</div>
         </div>
         <div className="orderTotal">
           <div>Order Total</div>
-          <div className="orderTotalValue">${basePrice - baseDiscount - typeDiscount}</div>
+          <div className="orderTotalValue">
+            ${(basePrice - baseDiscount - typeDiscount).toFixed(2)}
+          </div>
         </div>
       </div>
     );

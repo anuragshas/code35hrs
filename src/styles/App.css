@@ -140,5 +140,9 @@ button{
 }
 
 .addButton{
-  background-color: cornflowerblue
+  background-color: #008CBA;
+  color: white;
+  margin-top: 20px;
+  padding: 10px;
+  box-shadow: 0 5px 16px 0 rgba(0,0,0,0.24), 0 5px 50px 0 rgba(0,0,0,0.19);
 }
