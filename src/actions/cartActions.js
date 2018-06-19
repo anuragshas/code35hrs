@@ -8,3 +8,7 @@ export const removeFromCart = item => ({
   type: 'REMOVE',
   item,
 });
+
+export const addToCart = () => ({
+  type: 'RESET',
+});

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
-import { updateQty, removeFromCart } from '../actions/cartActions';
+import { updateQty, removeFromCart, addToCart } from '../actions/cartActions';
 import cartSelectors from '../selectors/cartSelectors';
 
 class Products extends Component {
@@ -83,6 +83,11 @@ class Products extends Component {
         </div>
         {this.productList()}
         <NotificationContainer />
+        {totalQty < 1 && (
+          <button className="addButton" onClick={() => addToCart()}>
+            Add Items
+          </button>
+        )}
       </div>
     );
   }
@@ -95,6 +100,7 @@ const mapStateToProps = (state, props) => ({
 const mapDispatchToProps = dispatch => ({
   updateQty: (id, update) => dispatch(updateQty(id, update)),
   removeFromCart: item => dispatch(removeFromCart(item)),
+  addToCart: () => dispatch(addToCart()),
 });
 
 export default connect(

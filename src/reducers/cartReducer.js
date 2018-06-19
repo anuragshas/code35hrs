@@ -14,6 +14,8 @@ export default (state = initialState.cart, action) => {
       });
     case 'REMOVE':
       return state.filter(i => i.id !== action.item.id);
+    case 'RESET':
+      return initialState.cart;
     default:
       return state;
   }

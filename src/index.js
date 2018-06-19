@@ -14,6 +14,11 @@ import Store from './store';
 // so we don't have to import our reducers in this file.
 const store = Store();
 const mountPoint = document.getElementById('root');
+window.onbeforeunload = () => {
+  const { cart } = store.getState();
+
+  localStorage.setItem('cart', JSON.stringify(cart));
+};
 
 // Provider makes so that every connected container component
 // gets access to the store, you have to create the store based
