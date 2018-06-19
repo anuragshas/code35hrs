@@ -14,9 +14,9 @@ class Products extends Component {
     return inc;
   };
   productList = () => {
-    const { products, addToCart, removeFromCart } = this.props;
+    const { cart, addToCart, removeFromCart } = this.props;
     console.log();
-    return products.map((item, index) => (
+    return cart.map((item, index) => (
       <div className="productValue" key={index}>
         <div className="itemsValue">
           <div className="itemsdata">
@@ -30,7 +30,7 @@ class Products extends Component {
                 className="delete"
                 onClick={() => {
                   removeFromCart(item);
-                  NotificationManager.info(item.name, 'Item Removed');
+                  NotificationManager.info(item.name, 'Item Removed', 2000);
                 }}
               >
                 x
@@ -53,12 +53,12 @@ class Products extends Component {
   };
 
   render() {
-    const { products } = this.props;
+    const { cart } = this.props;
     return (
       <div className="products">
         <div className="productsHeader">
           <div className="items">
-            <span>Items({products.length})</span>
+            <span>Items({cart.length})</span>
           </div>
           <div className="qty">
             <span>Qty</span>

@@ -1,6 +1,5 @@
 export default {
-  cart: [],
-  products: [
+  cart: [
     {
       id: 9090,
       name: 'Item1',
@@ -8,6 +7,7 @@ export default {
       discount: 10,
       type: 'fiction',
       img_url: 'https://store.lexisnexis.com.au/__data/media/catalog/thumb//placeholder.jpg',
+      qty: 1,
     },
     {
       id: 9091,
@@ -16,6 +16,7 @@ export default {
       discount: 15,
       type: 'literature',
       img_url: 'https://store.lexisnexis.com.au/__data/media/catalog/thumb//placeholder.jpg',
+      qty: 1,
     },
     {
       id: 9092,
@@ -24,6 +25,7 @@ export default {
       discount: 5,
       type: 'literature',
       img_url: 'https://store.lexisnexis.com.au/__data/media/catalog/thumb//placeholder.jpg',
+      qty: 1,
     },
     {
       id: 9093,
@@ -32,6 +34,7 @@ export default {
       discount: 0,
       type: 'thriller',
       img_url: 'https://store.lexisnexis.com.au/__data/media/catalog/thumb//placeholder.jpg',
+      qty: 1,
     },
     {
       id: 9094,
@@ -40,6 +43,7 @@ export default {
       discount: 25,
       type: 'thriller',
       img_url: 'https://store.lexisnexis.com.au/__data/media/catalog/thumb//placeholder.jpg',
+      qty: 1,
     },
     {
       id: 9095,
@@ -48,6 +52,7 @@ export default {
       discount: 5,
       type: 'literature',
       img_url: 'https://store.lexisnexis.com.au/__data/media/catalog/thumb//placeholder.jpg',
+      qty: 1,
     },
     {
       id: 9096,
@@ -56,6 +61,7 @@ export default {
       discount: 22,
       type: 'literature',
       img_url: 'https://store.lexisnexis.com.au/__data/media/catalog/thumb//placeholder.jpg',
+      qty: 1,
     },
     {
       id: 9097,
@@ -64,6 +70,8 @@ export default {
       discount: 18,
       type: 'fiction',
       img_url: 'https://store.lexisnexis.com.au/__data/media/catalog/thumb//placeholder.jpg',
+      qty: 1,
     },
   ],
+  products: [],
 };
