@@ -32,7 +32,7 @@ class Cart extends Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = state => ({
   cart: state.cart,
 });
 

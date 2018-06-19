@@ -66,7 +66,7 @@ class Products extends Component {
   };
 
   render() {
-    const { cart } = this.props;
+    const { cart, addToCart } = this.props;
     const { totalQty } = cartSelectors(cart);
     return (
       <div className="products">
@@ -93,7 +93,7 @@ class Products extends Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = state => ({
   cart: state.cart,
 });
 
