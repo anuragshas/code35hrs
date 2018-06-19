@@ -38,9 +38,6 @@ class Products extends Component {
                   qty: item.qty,
                 };
                 updateQty(item.id, update);
-              } else {
-                removeFromCart(item);
-                NotificationManager.info(item.name, 'Item Removed', 2000);
               }
             }}
           >
