@@ -1,6 +1,6 @@
 import initialState from './initialState';
 
-export default (state = initialState.cart, action) => {
+export default (state = null, action) => {
   switch (action.type) {
     case 'UPDATE':
       return state.map(item => {
