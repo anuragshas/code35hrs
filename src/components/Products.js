@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import { updateQty, removeFromCart, addToCart } from '../actions/cartActions';
@@ -92,6 +93,20 @@ class Products extends Component {
     );
   }
 }
+
+Products.propTypes = {
+  cart: PropTypes.object,
+  updateQty: PropTypes.func,
+  removeFromCart: PropTypes.func,
+  addToCart: PropTypes.func,
+};
+
+Products.defaultProps = {
+  cart: null,
+  updateQty: null,
+  removeFromCart: null,
+  addToCart: null,
+};
 
 const mapStateToProps = state => ({
   cart: state.cart,

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import cartSelectors from '../selectors/cartSelectors';
 
@@ -33,6 +34,14 @@ class Cart extends Component {
     );
   }
 }
+
+Cart.propTypes = {
+  cart: PropTypes.object,
+};
+
+Cart.defaultProps = {
+  cart: null,
+};
 
 const mapStateToProps = state => ({
   cart: state.cart,
