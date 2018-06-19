@@ -1,29 +1,31 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import cartSelectors from '../selectors/cartSelectors';
 
 class Cart extends Component {
   render() {
     const { cart } = this.props;
+    const { totalQty, basePrice, baseDiscount, typeDiscount = 0 } = cartSelectors(cart);
     return (
       <div className="cart">
         <div className="itemsCart">
-          <div>Items({cart.length})</div>
+          <div>Items({totalQty})</div>
           <div>:</div>
-          <div>$138</div>
+          <div>${basePrice}</div>
         </div>
         <div className="itemsCart">
           <div>Discount</div>
           <div>:</div>
-          <div>$138</div>
+          <div>-${baseDiscount}</div>
         </div>
         <div className="itemsCart">
           <div>Type Discount</div>
           <div>:</div>
-          <div>$138</div>
+          <div>-${typeDiscount}</div>
         </div>
         <div className="orderTotal">
           <div>Order Total</div>
-          <div className="orderTotalValue">$138</div>
+          <div className="orderTotalValue">${basePrice - baseDiscount - typeDiscount}</div>
         </div>
       </div>
     );

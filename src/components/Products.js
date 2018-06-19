@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NotificationContainer, NotificationManager } from 'react-notifications';
 import { updateQty, removeFromCart } from '../actions/cartActions';
+import cartSelectors from '../selectors/cartSelectors';
 
 class Products extends Component {
   productList = () => {
@@ -66,11 +67,12 @@ class Products extends Component {
 
   render() {
     const { cart } = this.props;
+    const { totalQty } = cartSelectors(cart);
     return (
       <div className="products">
         <div className="productsHeader">
           <div className="items">
-            <span>Items({cart.length})</span>
+            <span>Items({totalQty})</span>
           </div>
           <div className="qty">
             <span>Qty</span>
