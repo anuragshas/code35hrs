@@ -34,9 +34,9 @@ class Products extends Component {
             className="minus"
             onClick={() => {
               if (item.qty > 1) {
-                item.qty -= 1;
+                const qty = item.qty - 1;
                 const update = {
-                  qty: item.qty,
+                  qty,
                 };
                 updateQty(item.id, update);
               }
@@ -48,9 +48,9 @@ class Products extends Component {
           <button
             className="plus"
             onClick={() => {
-              item.qty += 1;
+              const qty = item.qty + 1;
               const update = {
-                qty: item.qty,
+                qty,
               };
               updateQty(item.id, update);
             }}
