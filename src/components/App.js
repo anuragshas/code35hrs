@@ -7,9 +7,12 @@ import '../styles/App.css';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <Products />
-        <Cart />
+      <div>
+        <h2 className="Header">&lt; Orders Summary </h2>
+        <div className="App">
+          <Products />
+          <Cart />
+        </div>
       </div>
     );
   }

@@ -3,15 +3,22 @@ body {
   padding: 0;
   text-align: center;
 }
+.Header {
+  width: 1020px;
+  display: flex;
+  justify-content: left;
+  padding-top: 100px;
+  margin: 0 auto;
+}
 .App {
   width: 1020px;
   display: flex;
   margin: 0 auto;
-  padding-top: 100px;
+  padding-top: 10px;
 }
 
 .products {
-  flex:0 0 60%;
+  flex: 1;
 }
 
 .cart{
@@ -28,11 +35,12 @@ body {
   width:280px;
   justify-content: space-between;
   padding-bottom: 10px;
+  padding-right: 10px;
 }
 .orderTotal {
   position: ABSOLUTE;
     bottom: 0px;
-    width: 305px;
+    width: 300px;
     background: #eee;
     display: flex;
     padding: 10px;
@@ -53,11 +61,11 @@ body {
 }
 .items {
   display: flex;
-  width: 430px;
+  width: 415px;
 }
 .qty {
   display: flex;
-   width: 106px;
+   width: 130px;
   padding-left: 40px;
 }
 .price {
@@ -148,7 +156,12 @@ button{
 }
 
 @media (max-width:1040px){
+  .Header{
+    padding-left: 20px;
+    width:100%;
+  }
   .App{
+    width:100%;
     flex-wrap: wrap;
     flex-direction: column-reverse;
   }
@@ -156,6 +169,7 @@ button{
     margin-bottom: 40px;
   }
   .products{
-    
+    margin-left: 20px;
+    flex: 0 0 645px;
   }
 }
