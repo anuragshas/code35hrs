@@ -11,7 +11,7 @@ body {
 }
 
 .products {
-  width:720px;
+  flex:0 0 60%;
 }
 
 .cart{
@@ -145,4 +145,17 @@ button{
   margin-top: 20px;
   padding: 10px;
   box-shadow: 0 5px 16px 0 rgba(0,0,0,0.24), 0 5px 50px 0 rgba(0,0,0,0.19);
+}
+
+@media (max-width:1040px){
+  .App{
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
+  }
+  .cart{
+    margin-bottom: 40px;
+  }
+  .products{
+    
+  }
 }
